@@ -1,0 +1,16 @@
+<h1> All#the#Tapes! </h1>
+<p>Find me in app/views/tapes/index.html.erb</p>
+
+<%= form_for Tape.new do |t| %>
+  <%= t.label :kind %>
+  <%= t.text_field :kind %>
+  <%= t.label :purpose %>
+  <%= t.text_field :purpose %>
+  <%= t.submit %>
+<% end %>
+
+  <% @tapes.each do |tape| %>
+    <%= link_to tape.kind, tape_path(tape.id) %>
+    <%= tape.purpose %>
+    <br>
+<% end %>
